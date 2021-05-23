@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>User Register Page</title>
+    <%- include('../partials/head');  %>
+</head>
+
+<body class="container">
+    <header>
+        <%- include('../partials/header') ;%>
+    </header>
+    <main>
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <div class="card card-body">
+                    <img class="logo" src="/img/logo.png">
+                    <h3 class="text-center">Account Register</h3>
+                    <!-- <h2>Sign up for a free account</h2> -->
+
+                    <form action="/users/register" method="post">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password2">Confirm Password</label>
+                            <input type="password" name="password2" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <span>If you already have an account, <a href="/users/login">Login</a></span>
+
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+</body>
+
+</html>

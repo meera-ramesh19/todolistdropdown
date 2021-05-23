@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Page heading</title>
+    <style>
+        .jumbotron {
+            padding: 20px 0 40px 0;
+            margin-bottom: 50px;
+        }
+        
+        h1 {
+            font-weight: 200;
+            margin-bottom: 5px;
+        }
+        
+        .lead {
+            margin-bottom: 75px;
+        }
+    </style>
+    <%- include('../partials/head'); %>
+</head>
+
+<body class="container">
+
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+
+    <main>
+        <div class="jumbotron jumbotron-fluid bg-light">
+            <div class="container-fluid">
+                <div class="jumbotron text-center">
+                    <!-- <h1>TASKS APP</h1> -->
+                    <p> Welcome to TODOAPP to store your tasks</p>
+                    <a href="/tasks/add" class="btn btn-dark btn-lg">Add Todo List</a>
+                    <p class="lead"></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+</body>
+
+</html>

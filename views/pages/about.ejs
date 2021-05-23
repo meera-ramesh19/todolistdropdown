@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>About Page</title>
+    <style>
+        .jumbotron {
+            padding: 20px 0 40px 0;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-weight: 200;
+            margin-bottom: 5px;
+        }
+        
+        .lead {
+            padding-bottom: 20px;
+        }
+    </style>
+    <%- include('../partials/head');  %>
+</head>
+
+<body class="container">
+    <header>
+        <%- include('../partials/header') ;%>
+    </header>
+    <main>
+        <div class="row">
+            <div class="col">
+                <div class="jumbotron jumbotron-fluid bg-light">
+                    <!-- mt-20 -->
+                    <div class="container-fluid">
+                        <div class="jumbotron text-center">
+
+                            <!-- <h1>TASKS APP</h1>-->
+                            <p>A CRUD NODEJS APPLICATION</p>
+                            <p>The application is a todo list with the deadline date specified. </p>
+                            <p>It allows the user to add, remove and update the tasks so that the user can complete the todolist.</p>
+                            <p>It allows the user to mark when the tasks are completed</p>
+                            <p class="lead"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+</body>
+
+</html>

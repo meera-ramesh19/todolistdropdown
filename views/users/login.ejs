@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>About Page</title>
+    <%- include('../partials/head');  %>
+</head>
+
+<body class="container">
+    <header>
+        <%- include('../partials/header') ;%>
+    </header>
+    <main>
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <div class="card card-body">
+                    <img class="logo" src="/img/logo.png">
+                    <h3 class="text-center">Account Login</h3>
+                    <div method="post" action="/users/login">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" class="form-control" required>
+
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Page Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <style href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css"> Additional elements for browsers and robots go here goes here
+     <style> 
+    .wrapper { background: lightgrey; }
+    </style> -->
+
+</head>
+
+<body>
+    <!--Elements visible to users go here-->
+    <h1>TODO LIST </h1>
+    <div class="container">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+
+            <a class="navbar-brand" href="#">MENU</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsExample09">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/lists">Lists</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-tasks"></span>Tasks</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown09">
+                            <!-- <a class="dropdown-item" href="/tasks"><span class=""> </span>Tasks</a> -->
+                            <a class="dropdown-item" href="/tasks/add"><span class="fa fa-plus-circle"> </span>Add</a>
+                            <a class="dropdown-item" href="/tasks/edit"> <span class="fa fa-edit"> </span>Update</a>
+                            <a class="dropdown-item " href="/tasks/delete"> <span class="fa fa-trash"> </span>Delete</a>
+                        </div>
+                    </li>
+                    <!-- second drop down-->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-list-ul"></span> Status</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown10">
+                            <a class="dropdown-item" href="/status/markcompleted"><span class="fa fa-check"></span>MarkCompleted </a>
+                            <a class="dropdown-item" href="/status/incomplete"><span class="fa fa-times"></span>NotCompleted</a>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <% if (user){%>
+
+                        <li class="nav-item ">
+                            <a class="nav-link " href="/users/logout ">Logout</a>
+                        </li>
+                        <% } else {%>
+                            <li class="nav-item ">
+                                <a class="nav-link " href="/users/login ">Login</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link " href="/users/register ">Register</a>
+                            </li>
+                            <%}%>
+                </ul>
+                <!-- <form class="form-inline my-2 my-md-0 ">
+                    <input class="form-control " type="text " placeholder="Search " aria-label="Search ">
+                </form> -->
+            </div>
+
+
+        </nav>
+    </div>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script>
+
+</body>
+
+</html>
+<!-- <nav class="navbar navbar-expand-sm navbar-light bg-light "><ul class="navbar-nav mr-auto "><li class="nav-item "><a class="nav-link " href="/ ">Home</a></li><li class="nav-item "><a class="nav-link " href="/about ">About</a></li><li class="nav-item
+                                "><a class="nav-link " href="/lists ">List</a></li><li class="nav-item "><a class="nav-link " href="/tasks ">Tasks</a></li><li class="nav-item "><a class="nav-link " href="/completed ">Completed</a></li></ul></nav>-->

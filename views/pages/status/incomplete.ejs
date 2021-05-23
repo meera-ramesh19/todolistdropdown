@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Lists of all tasks</title>
+
+    <style>
+        .jumbotron {
+            padding: 20px 0 40px 0;
+            margin-bottom: 50px;
+        }
+        
+        h1 {
+            font-weight: 200;
+            margin-bottom: 5px;
+        }
+        
+        .lead {
+            margin-bottom: 75px;
+        }
+        /* .card-top {
+            background-color: colors[index%5].primaryColor;
+        } */
+        
+        .card-header {
+            /* background-color: colors[index%5].secondaryColor;*/
+            >border-radius: 10px;
+        }
+        
+        .far fa-edit,
+        .fas fa-trash-alt {
+            /* color: colors[index%5].primaryColor; */
+            cursor: pointer;
+        }
+        
+        .header {
+            height: 200px;
+            width: 100%;
+            background-color: #E9EEF6;
+            padding-top: 50px;
+        }
+        
+        .card-wrapper {
+            width: 270px;
+            height: 250px;
+            box-shadow: 0px 3px 50px #A5A5A5;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card-top {
+            width: 100%;
+            height: 2%;
+        }
+        
+        .task-holder {
+            width: 100%;
+            height: 98%;
+            padding: 10px 10px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        
+        .card-header {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            max-width: 140px;
+            height: 40px;
+            /* padding: 1px 1px !important; */
+            text-align: center;
+            border-radius: 10px;
+        }
+        
+        .task-container {
+            height: 600px;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #F6F7F8;
+            padding: 40px 100px;
+        }
+        
+        .font-icons {
+            position: absolute;
+            right: 20px;
+            bottom: -220px;
+        }
+        
+        .bt,
+        .btn-primary {
+            background: lightgray;
+        }
+        /* .card-group {
+            display: flex;
+        } */
+    </style>
+    <script></script>
+    <%- include( '../partials/head'); %>
+</head>
+
+<body class="container">
+
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+
+    <main>
+
+        <div class="jumbotron jumbotron-fluid bg-light mt-10">
+            <div class="container-fluid">
+                <div class="jumbotron">
+
+                    <p> Welcome to TODOLIST APP to store your tasks
+                    </p>
+
+                    <h3>Tasks left to do:
+                        <%= tasks.reduce(function(acc,cur){
+                                if(cur.completed == false){
+                                     acc++
+                                    }return acc},0) %>
+                    </h3>
+
+                    <ul>
+
+                        <!--Loop Through cards-->
+                        <% for(let i = 0; i < tasks.length; i++) {%>
+
+                            <% if (tasks[i].completed === false){ %>
+                                <!-- <%= tasks[i].completed %> -->
+
+
+                                <!-- <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-6 mb-4"> -->
+                                <!-- <div class="card-group"> -->
+                                <div class="card-wrapper mr-5" style="width: 25rem">
+                                    <div class="card-top">
+                                        <div class="task-holder">
+
+                                            <h6 class="card-header">
+
+                                                <%= tasks[i].userid %>
+                                                    <%= tasks[i].name %>
+                                            </h6>
+                                            <div class="card-text mt-3">
+
+                                                <h6>
+                                                    Category:
+                                                    <%= tasks[i].category %>
+                                                </h6>
+                                                <h6>
+                                                    Description:
+                                                    <%= tasks[i].description %>
+                                                </h6>
+                                                <h6>
+                                                    Deadline:
+                                                    <%= tasks[i].deadline %>
+                                                        <!-- <%= new Date(tasks[i].deadline).toLocaleString().split(',')[0] %> -->
+                                                </h6>
+                                                <h6>
+
+                                                    Completed:
+                                                    <%= tasks[i].completed %>
+
+
+                                                        <!-- <label>Completed<input type="checkbox " name="completed " class="checkComplete "> -->
+                                                        <!-- <% if (tasks.completed === true){ %> -->
+                                                        <!-- <%= tasks[i].completed %> -->
+                                                        <!-- checked -->
+                                                        <!-- <%} else {%>
+                                                            <% } %> -->
+
+                                                        <!-- </label> -->
+
+                                                </h6>
+                                            </div>
+                                            <div class="font-icons">
+                                                <!-- <a href="#" class="btn btn-primary"> -->
+
+                                                <a href="/tasks/edit" class="btn btn-primary" data-toggle="modal" data-target="#editModal" onClick="setEditModal(
+                                                <%= tasks.name%>)">
+                                                    <span class="fa fa-edit"></span>
+
+                                                </a>
+
+                                                <!-- <a href="#" class="btn btn-primary">-->
+                                                <a href="/tasks/delete" class="btn btn-danger"><span class="fa fa-trash"></span>
+
+
+
+                                                </a>
+                                                <a href="#" class="btn btn-primary">
+                                                    <% if (complete){%>
+                                                        <span class="fa fa-check-square" style="font-size:24px;"></span>
+                                                        <% }else {%>
+                                                            <span class="fas fa-window-close" style="font-size:24px;color:red"></span>
+                                                            <% }%>
+                                                </a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- </div> -->
+
+                                <!--         </div>
+        <
+        /div> <
+        /div>-->
+                                <%} else {%>
+                                    <% } %>
+
+                                        <% } %>
+
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+    <script type="textjavascript " src="./js/main.js">
+    </script>
+</body>
+
+</html>

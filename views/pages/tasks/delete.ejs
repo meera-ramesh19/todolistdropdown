@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Delete Page</title>
+    <%- include('../partials/head');  %>
+</head>
+
+<body class="container">
+    <header>
+        <%- include('../partials/header') ;%>
+    </header>
+    <main>
+        <% for(let i = 0; i < tasks.length; i++) {%>
+            <div class="card card-body mb-2">
+                <h4>
+                    <% tasks[i].userid%>
+                        <% tasks[i].name%>
+                </h4>
+
+                <p>
+                    <% tasks[i].description%>
+                </p>
+                <p>
+                    <% tasks[i].category%>
+                </p>
+                <p>
+                    <% tasks[i].deadline%>
+                </p>
+
+                <!-- <a class="btn btn-dark btn-block mb-2" href="/tasks/edit/<% id %>">Edit</a> -->
+                <form method="post" action="/tasks/<% id %>?_method=DELETE">
+
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="submit" class="btn btn-danger btn-block" value="Delete">
+                </form>
+                <p>No tasks listed</p>
+                <% } %>
+
+                    <footer>
+                        <%- include('../partials/footer'); %>
+                    </footer>
+</body>
+
+</html>
